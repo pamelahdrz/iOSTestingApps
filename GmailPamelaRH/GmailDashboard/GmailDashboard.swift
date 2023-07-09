@@ -5,7 +5,6 @@
 //  Created by Razo Hernandez Pamela on 07/07/23.
 //
 
-import Foundation
 import UIKit
 
 struct UserEmailData: Decodable {
@@ -36,34 +35,39 @@ struct EmailContent: Decodable {
 
 public typealias FetchSuccessful = (_ success : Bool, _ error : NSError?) -> ()
 
-public class GmailDashboard: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
-
+public class GmailDashboard: UIViewController, UISearchBarDelegate {
+    
     @IBOutlet weak var emailTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var emptyInboxView: UIView!
     
     private var emailContent: UserEmailData?
     
+    var shouldCellBeExpanded = false
+    var indexOfExpandedCell = -1
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
+        self.initEmailTableView()
         searchBar.delegate = self
-        
-        emailTableView.delegate = self
-        emailTableView.dataSource = self
-        emailTableView.isScrollEnabled = true
-        emailTableView.separatorColor = UIColor.clear
-        emailTableView.separatorStyle = .none
-        emailTableView.register(UINib(nibName: "EmailCell", bundle: nil), forCellReuseIdentifier: "EmailCell")
-        DispatchQueue.main.async {
-            self.fetchEmailContent { (success, error) in
-                if success {
-                    self.emailTableView.reloadData()
-                }
+    }
+    
+    private func initEmailTableView() {
+        self.fetchEmailContent { (success, error) in
+            if success {
+                self.emailTableView.delegate = self
+                self.emailTableView.dataSource = self
+                self.emailTableView.isScrollEnabled = true
+                self.emailTableView.separatorColor = UIColor.clear
+                self.emailTableView.separatorStyle = .none
+                self.emailTableView.register(UINib(nibName: "EmailCell", bundle: nil), forCellReuseIdentifier: "EmailCell")
+            } else {
+                print("Tabla no Inicializada")
             }
         }
     }
     
-    public func fetchEmailContent(completionHandler:@escaping FetchSuccessful) {
+    private func fetchEmailContent(completionHandler:@escaping FetchSuccessful) {
         guard let pathJson = Bundle.main.path(forResource: "GmailUserInfo", ofType: "json") else {
             return
         }
@@ -74,31 +78,29 @@ public class GmailDashboard: UIViewController, UISearchBarDelegate, UITableViewD
             
             emailContent = decodeUserEmail
             
-            print("Numero de objetos: \(emailContent?.userEmail.count ?? 0)")
+            completionHandler(true, nil)
             
         } catch {
             print("JSON is not fetching itself")
             emptyInboxView.isHidden = false
+            
+            completionHandler(false, error as NSError)
         }
     }
-    
-    // MARK: TableViewDelegate
-    
+}
+
+extension GmailDashboard: UITableViewDelegate, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //var numberOfRows = 0
-        /*self.fetchEmailContent { [weak self] success, error in
-            DispatchQueue.main.async {
-                if success {
-                    numberOfRows = self?.emailContent?.userEmail.count ?? 0
-                    self?.emptyInboxView.isHidden = true
-                } else {
-                    numberOfRows = 0
-                    self?.emptyInboxView.isHidden = false
-                }
-                self?.emailTableView.reloadData()
-            }
-        }*/
-        return 5
+        var numberOfRows = 0
+        if emailContent?.userEmail.count == 0 {
+            numberOfRows = 0
+            emptyInboxView.isHidden = false
+        } else {
+            numberOfRows = emailContent?.userEmail.count ?? 0
+            emptyInboxView.isHidden = true
+        }
+        
+        return numberOfRows
     }
     
     public func numberOfSections(in tableView: UITableView) -> Int {
@@ -108,20 +110,42 @@ public class GmailDashboard: UIViewController, UISearchBarDelegate, UITableViewD
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "EmailCell", for: indexPath) as? EmailCell else { return UITableViewCell() }
         
-        fetchEmailContent { (success, error) in
-            if success {
-                DispatchQueue.main.async {
-                    cell.senderName.text = self.emailContent?.userEmail[indexPath.row].emisor
-                    cell.emailSubject.text = self.emailContent?.userEmail[indexPath.row].asunto
-                    cell.emailHeader.text = self.emailContent?.userEmail[indexPath.row].mensaje
-                    cell.receivedTime.text = self.emailContent?.userEmail[indexPath.row].hora
-                }
-            }
+        cell.garbageImage.image =  cell.garbageImage.image?.withRenderingMode(.alwaysTemplate)
+        cell.garbageImage.tintColor = UIColor.red
+        cell.selectionStyle = .none
+        
+        cell.senderName.text = emailContent?.userEmail[indexPath.row].emisor
+        cell.emailSubject.text = emailContent?.userEmail[indexPath.row].asunto
+        cell.emailHeader.text = emailContent?.userEmail[indexPath.row].mensaje
+        cell.receivedTime.text = emailContent?.userEmail[indexPath.row].hora
+        
+        if shouldCellBeExpanded && indexPath.row == indexOfExpandedCell {
+            cell.emailHeader.numberOfLines = 5
+        } else {
+            cell.emailHeader.numberOfLines = 3
         }
+        
         return cell
     }
     
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var size: CGFloat = 0.0
+        
+        if shouldCellBeExpanded && indexPath.row == indexOfExpandedCell {
+            size = 170
+        } else {
+            size = 140
+        }
+        
+        return size
+    }
     
-    
-    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        indexOfExpandedCell = indexPath.row
+        shouldCellBeExpanded = true
+        
+        emailTableView.beginUpdates()
+        emailTableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+        emailTableView.endUpdates()
+    }
 }
