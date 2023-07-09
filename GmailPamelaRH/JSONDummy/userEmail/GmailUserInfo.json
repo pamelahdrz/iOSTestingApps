@@ -1,0 +1,54 @@
+{
+    "userEmail": [
+        {
+            "emisor": "Pamela Hernández",
+            "correoEmisor": "pamelarhernandez@gmail.com",
+            "asunto": "Oferta de Trabajo",
+            "mensaje": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam rhoncus luctus nisi, tempor fermentum augue fringilla eget. Praesent eget suscipit est, nec euismod nunc. Nulla condimentum ex aliquet, rutrum arcu ac, suscipit urna. Nulla diam velit, bibendum tincidunt nisl non, porta varius libero. Praesent eleifend gravida ipsum sed consectetur. Proin convallis magna at purus faucibus, tincidunt imperdiet libero",
+            "hora": "14:00 p.m.",
+            "leido": false,
+            "destacado": true,
+            "spam": false
+        },
+        {
+            "emisor": "Mila Kunis",
+            "correoEmisor": "mila_k@gmail.com",
+            "asunto": "New Vacancies available",
+            "mensaje": "Pellentesque quis blandit dolor. In nec volutpat dolor. Ut pulvinar arcu vitae elit mollis scelerisque. Mauris quis urna massa. Nullam viverra justo vitae leo suscipit, id maximus risus maximus. Cras nisl eros, ultricies sed lobortis et, imperdiet tincidunt dui. Suspendisse vitae turpis posuere, sodales nisi maximus, aliquet mi. Aliquam a velit vel quam feugiat rhoncus. Phasellus a dictum diam, nec lobortis quam. In tortor",
+            "hora": "13:00 p.m.",
+            "leido": true,
+            "destacado": false,
+            "spam": false
+        },
+        {
+            "emisor": "Promociones Liverpool",
+            "correoEmisor": "promociones@prom.liverpool.com.mx",
+            "asunto": "Ofertas de hasta el 10% de descuento",
+            "mensaje": "Vivamus non ante nisl. Quisque posuere bibendum eros id eleifend. Curabitur consequat mauris at dapibus bibendum. Fusce lorem enim, euismod quis nulla at, rhoncus sodales nisl. Nullam ultrices efficitur tempor. Vestibulum vitae erat dictum, tempus velit et, finibus elit. Proin hendrerit nibh massa, non fermentum tortor viverra ac.",
+            "hora": "11:00 a.m.",
+            "leido": false,
+            "destacado": false,
+            "spam": true
+        },
+        {
+            "emisor": "DHL Express México",
+            "correoEmisor": "mexico@dhl-news.com",
+            "asunto": "¡DHL más cerca de ti!",
+            "mensaje": "Curabitur interdum orci eros, eu maximus nulla elementum id. Praesent eu magna felis. Donec id laoreet felis. Fusce congue ante ac orci rutrum, eget laoreet magna fermentum. Donec vehicula massa quis gravida ullamcorper. Proin finibus fringilla suscipit. Aliquam et hendrerit quam, ut iaculis augue. Pellentesque vestibulum consequat mollis. Nunc vehicula tempus turpis a pharetra.",
+            "hora": "12:19 a.m.",
+            "leido": true,
+            "destacado": false,
+            "spam": false
+        },
+        {
+            "emisor": "OCC Mundial",
+            "correoEmisor": "info@tx.occmundial.com.mx",
+            "asunto": "Vacante Expirada",
+            "mensaje": "Donec nec iaculis nisi. Quisque mollis tempus egestas. Donec posuere blandit velit id pretium. Praesent vulputate imperdiet ex ut lacinia. Donec eget viverra nisi. Sed mollis leo in libero lobortis facilisis. Sed tincidunt magna ligula, vitae viverra sem bibendum ac. Vivamus orci erat, porta a justo nec, aliquam suscipit felis.",
+            "hora": "11:18 a.m.",
+            "leido": false,
+            "destacado": true,
+            "spam": true
+        }
+    ]
+}

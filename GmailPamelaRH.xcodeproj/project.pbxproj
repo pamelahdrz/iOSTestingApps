@@ -1,0 +1,667 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B134B1422A590E4800DB8750 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B134B1412A590E4800DB8750 /* AppDelegate.swift */; };
+		B134B1442A590E4800DB8750 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B134B1432A590E4800DB8750 /* SceneDelegate.swift */; };
+		B134B14B2A590E4900DB8750 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B134B14A2A590E4900DB8750 /* Assets.xcassets */; };
+		B134B14E2A590E4900DB8750 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B134B14C2A590E4900DB8750 /* LaunchScreen.storyboard */; };
+		B134B1592A590E4900DB8750 /* GmailPamelaRHTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B134B1582A590E4900DB8750 /* GmailPamelaRHTests.swift */; };
+		B134B1632A590E4900DB8750 /* GmailPamelaRHUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B134B1622A590E4900DB8750 /* GmailPamelaRHUITests.swift */; };
+		B134B1652A590E4900DB8750 /* GmailPamelaRHUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B134B1642A590E4900DB8750 /* GmailPamelaRHUITestsLaunchTests.swift */; };
+		B134B1732A591BCE00DB8750 /* GmailUserInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = B134B1722A591BCE00DB8750 /* GmailUserInfo.json */; };
+		B134B1772A591DE600DB8750 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = B134B1762A591DE600DB8750 /* Login.swift */; };
+		B134B17B2A591E1F00DB8750 /* GmailDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B134B17A2A591E1F00DB8750 /* GmailDashboard.swift */; };
+		B134B17D2A591E3000DB8750 /* GmailDashboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = B134B17C2A591E3000DB8750 /* GmailDashboard.xib */; };
+		B134B1812A594C0E00DB8750 /* usersLogin.json in Resources */ = {isa = PBXBuildFile; fileRef = B134B1802A594C0E00DB8750 /* usersLogin.json */; };
+		B1905C122A595E1D00B2C280 /* Login.xib in Resources */ = {isa = PBXBuildFile; fileRef = B134B1782A591E0A00DB8750 /* Login.xib */; };
+		B1905C142A596BD600B2C280 /* EmailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1905C132A596BD600B2C280 /* EmailCell.swift */; };
+		B1905C162A596BED00B2C280 /* EmailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1905C152A596BED00B2C280 /* EmailCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B134B1552A590E4900DB8750 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B134B1362A590E4800DB8750 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B134B13D2A590E4800DB8750;
+			remoteInfo = GmailPamelaRH;
+		};
+		B134B15F2A590E4900DB8750 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B134B1362A590E4800DB8750 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B134B13D2A590E4800DB8750;
+			remoteInfo = GmailPamelaRH;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B134B13E2A590E4800DB8750 /* GmailPamelaRH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GmailPamelaRH.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B134B1412A590E4800DB8750 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B134B1432A590E4800DB8750 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B134B14A2A590E4900DB8750 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B134B14D2A590E4900DB8750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B134B14F2A590E4900DB8750 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B134B1542A590E4900DB8750 /* GmailPamelaRHTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GmailPamelaRHTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B134B1582A590E4900DB8750 /* GmailPamelaRHTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GmailPamelaRHTests.swift; sourceTree = "<group>"; };
+		B134B15E2A590E4900DB8750 /* GmailPamelaRHUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GmailPamelaRHUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B134B1622A590E4900DB8750 /* GmailPamelaRHUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GmailPamelaRHUITests.swift; sourceTree = "<group>"; };
+		B134B1642A590E4900DB8750 /* GmailPamelaRHUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GmailPamelaRHUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B134B1722A591BCE00DB8750 /* GmailUserInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GmailUserInfo.json; sourceTree = "<group>"; };
+		B134B1762A591DE600DB8750 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		B134B1782A591E0A00DB8750 /* Login.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Login.xib; sourceTree = "<group>"; };
+		B134B17A2A591E1F00DB8750 /* GmailDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GmailDashboard.swift; sourceTree = "<group>"; };
+		B134B17C2A591E3000DB8750 /* GmailDashboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GmailDashboard.xib; sourceTree = "<group>"; };
+		B134B1802A594C0E00DB8750 /* usersLogin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = usersLogin.json; sourceTree = "<group>"; };
+		B1905C132A596BD600B2C280 /* EmailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCell.swift; sourceTree = "<group>"; };
+		B1905C152A596BED00B2C280 /* EmailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B134B13B2A590E4800DB8750 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B134B1512A590E4900DB8750 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B134B15B2A590E4900DB8750 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B134B1352A590E4800DB8750 = {
+			isa = PBXGroup;
+			children = (
+				B134B1402A590E4800DB8750 /* GmailPamelaRH */,
+				B134B1572A590E4900DB8750 /* GmailPamelaRHTests */,
+				B134B1612A590E4900DB8750 /* GmailPamelaRHUITests */,
+				B134B13F2A590E4800DB8750 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B134B13F2A590E4800DB8750 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B134B13E2A590E4800DB8750 /* GmailPamelaRH.app */,
+				B134B1542A590E4900DB8750 /* GmailPamelaRHTests.xctest */,
+				B134B15E2A590E4900DB8750 /* GmailPamelaRHUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B134B1402A590E4800DB8750 /* GmailPamelaRH */ = {
+			isa = PBXGroup;
+			children = (
+				B134B1412A590E4800DB8750 /* AppDelegate.swift */,
+				B134B1432A590E4800DB8750 /* SceneDelegate.swift */,
+				B134B17E2A594A8B00DB8750 /* JSONDummy */,
+				B134B1742A591D8C00DB8750 /* Login */,
+				B134B1752A591DB600DB8750 /* GmailDashboard */,
+				B134B14A2A590E4900DB8750 /* Assets.xcassets */,
+				B134B14C2A590E4900DB8750 /* LaunchScreen.storyboard */,
+				B134B14F2A590E4900DB8750 /* Info.plist */,
+			);
+			path = GmailPamelaRH;
+			sourceTree = "<group>";
+		};
+		B134B1572A590E4900DB8750 /* GmailPamelaRHTests */ = {
+			isa = PBXGroup;
+			children = (
+				B134B1582A590E4900DB8750 /* GmailPamelaRHTests.swift */,
+			);
+			path = GmailPamelaRHTests;
+			sourceTree = "<group>";
+		};
+		B134B1612A590E4900DB8750 /* GmailPamelaRHUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B134B1622A590E4900DB8750 /* GmailPamelaRHUITests.swift */,
+				B134B1642A590E4900DB8750 /* GmailPamelaRHUITestsLaunchTests.swift */,
+			);
+			path = GmailPamelaRHUITests;
+			sourceTree = "<group>";
+		};
+		B134B1712A591B7900DB8750 /* userEmail */ = {
+			isa = PBXGroup;
+			children = (
+				B134B1722A591BCE00DB8750 /* GmailUserInfo.json */,
+			);
+			path = userEmail;
+			sourceTree = "<group>";
+		};
+		B134B1742A591D8C00DB8750 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B134B1762A591DE600DB8750 /* Login.swift */,
+				B134B1782A591E0A00DB8750 /* Login.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B134B1752A591DB600DB8750 /* GmailDashboard */ = {
+			isa = PBXGroup;
+			children = (
+				B134B17A2A591E1F00DB8750 /* GmailDashboard.swift */,
+				B134B17C2A591E3000DB8750 /* GmailDashboard.xib */,
+				B1905C132A596BD600B2C280 /* EmailCell.swift */,
+				B1905C152A596BED00B2C280 /* EmailCell.xib */,
+			);
+			path = GmailDashboard;
+			sourceTree = "<group>";
+		};
+		B134B17E2A594A8B00DB8750 /* JSONDummy */ = {
+			isa = PBXGroup;
+			children = (
+				B134B17F2A594A9A00DB8750 /* usersLogin */,
+				B134B1712A591B7900DB8750 /* userEmail */,
+			);
+			path = JSONDummy;
+			sourceTree = "<group>";
+		};
+		B134B17F2A594A9A00DB8750 /* usersLogin */ = {
+			isa = PBXGroup;
+			children = (
+				B134B1802A594C0E00DB8750 /* usersLogin.json */,
+			);
+			path = usersLogin;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B134B13D2A590E4800DB8750 /* GmailPamelaRH */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B134B1682A590E4900DB8750 /* Build configuration list for PBXNativeTarget "GmailPamelaRH" */;
+			buildPhases = (
+				B134B13A2A590E4800DB8750 /* Sources */,
+				B134B13B2A590E4800DB8750 /* Frameworks */,
+				B134B13C2A590E4800DB8750 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GmailPamelaRH;
+			productName = GmailPamelaRH;
+			productReference = B134B13E2A590E4800DB8750 /* GmailPamelaRH.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B134B1532A590E4900DB8750 /* GmailPamelaRHTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B134B16B2A590E4900DB8750 /* Build configuration list for PBXNativeTarget "GmailPamelaRHTests" */;
+			buildPhases = (
+				B134B1502A590E4900DB8750 /* Sources */,
+				B134B1512A590E4900DB8750 /* Frameworks */,
+				B134B1522A590E4900DB8750 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B134B1562A590E4900DB8750 /* PBXTargetDependency */,
+			);
+			name = GmailPamelaRHTests;
+			productName = GmailPamelaRHTests;
+			productReference = B134B1542A590E4900DB8750 /* GmailPamelaRHTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B134B15D2A590E4900DB8750 /* GmailPamelaRHUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B134B16E2A590E4900DB8750 /* Build configuration list for PBXNativeTarget "GmailPamelaRHUITests" */;
+			buildPhases = (
+				B134B15A2A590E4900DB8750 /* Sources */,
+				B134B15B2A590E4900DB8750 /* Frameworks */,
+				B134B15C2A590E4900DB8750 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B134B1602A590E4900DB8750 /* PBXTargetDependency */,
+			);
+			name = GmailPamelaRHUITests;
+			productName = GmailPamelaRHUITests;
+			productReference = B134B15E2A590E4900DB8750 /* GmailPamelaRHUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B134B1362A590E4800DB8750 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					B134B13D2A590E4800DB8750 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					B134B1532A590E4900DB8750 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = B134B13D2A590E4800DB8750;
+					};
+					B134B15D2A590E4900DB8750 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = B134B13D2A590E4800DB8750;
+					};
+				};
+			};
+			buildConfigurationList = B134B1392A590E4800DB8750 /* Build configuration list for PBXProject "GmailPamelaRH" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B134B1352A590E4800DB8750;
+			productRefGroup = B134B13F2A590E4800DB8750 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B134B13D2A590E4800DB8750 /* GmailPamelaRH */,
+				B134B1532A590E4900DB8750 /* GmailPamelaRHTests */,
+				B134B15D2A590E4900DB8750 /* GmailPamelaRHUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B134B13C2A590E4800DB8750 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B134B1812A594C0E00DB8750 /* usersLogin.json in Resources */,
+				B1905C162A596BED00B2C280 /* EmailCell.xib in Resources */,
+				B134B14E2A590E4900DB8750 /* LaunchScreen.storyboard in Resources */,
+				B134B14B2A590E4900DB8750 /* Assets.xcassets in Resources */,
+				B134B1732A591BCE00DB8750 /* GmailUserInfo.json in Resources */,
+				B134B17D2A591E3000DB8750 /* GmailDashboard.xib in Resources */,
+				B1905C122A595E1D00B2C280 /* Login.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B134B1522A590E4900DB8750 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B134B15C2A590E4900DB8750 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B134B13A2A590E4800DB8750 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B134B1422A590E4800DB8750 /* AppDelegate.swift in Sources */,
+				B134B1442A590E4800DB8750 /* SceneDelegate.swift in Sources */,
+				B134B17B2A591E1F00DB8750 /* GmailDashboard.swift in Sources */,
+				B1905C142A596BD600B2C280 /* EmailCell.swift in Sources */,
+				B134B1772A591DE600DB8750 /* Login.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B134B1502A590E4900DB8750 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B134B1592A590E4900DB8750 /* GmailPamelaRHTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B134B15A2A590E4900DB8750 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B134B1632A590E4900DB8750 /* GmailPamelaRHUITests.swift in Sources */,
+				B134B1652A590E4900DB8750 /* GmailPamelaRHUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B134B1562A590E4900DB8750 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B134B13D2A590E4800DB8750 /* GmailPamelaRH */;
+			targetProxy = B134B1552A590E4900DB8750 /* PBXContainerItemProxy */;
+		};
+		B134B1602A590E4900DB8750 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B134B13D2A590E4800DB8750 /* GmailPamelaRH */;
+			targetProxy = B134B15F2A590E4900DB8750 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B134B14C2A590E4900DB8750 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B134B14D2A590E4900DB8750 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B134B1662A590E4900DB8750 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B134B1672A590E4900DB8750 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B134B1692A590E4900DB8750 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KZTQC9XXM3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GmailPamelaRH/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PamelaR.GmailPamelaRH;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		B134B16A2A590E4900DB8750 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KZTQC9XXM3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GmailPamelaRH/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PamelaR.GmailPamelaRH;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		B134B16C2A590E4900DB8750 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KZTQC9XXM3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PamelaR.GmailPamelaRHTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GmailPamelaRH.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GmailPamelaRH";
+			};
+			name = Debug;
+		};
+		B134B16D2A590E4900DB8750 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KZTQC9XXM3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PamelaR.GmailPamelaRHTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GmailPamelaRH.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GmailPamelaRH";
+			};
+			name = Release;
+		};
+		B134B16F2A590E4900DB8750 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KZTQC9XXM3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PamelaR.GmailPamelaRHUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GmailPamelaRH;
+			};
+			name = Debug;
+		};
+		B134B1702A590E4900DB8750 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KZTQC9XXM3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PamelaR.GmailPamelaRHUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GmailPamelaRH;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B134B1392A590E4800DB8750 /* Build configuration list for PBXProject "GmailPamelaRH" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B134B1662A590E4900DB8750 /* Debug */,
+				B134B1672A590E4900DB8750 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B134B1682A590E4900DB8750 /* Build configuration list for PBXNativeTarget "GmailPamelaRH" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B134B1692A590E4900DB8750 /* Debug */,
+				B134B16A2A590E4900DB8750 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B134B16B2A590E4900DB8750 /* Build configuration list for PBXNativeTarget "GmailPamelaRHTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B134B16C2A590E4900DB8750 /* Debug */,
+				B134B16D2A590E4900DB8750 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B134B16E2A590E4900DB8750 /* Build configuration list for PBXNativeTarget "GmailPamelaRHUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B134B16F2A590E4900DB8750 /* Debug */,
+				B134B1702A590E4900DB8750 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B134B1362A590E4800DB8750 /* Project object */;
+}
