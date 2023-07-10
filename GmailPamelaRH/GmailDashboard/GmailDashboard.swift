@@ -172,11 +172,11 @@ extension GmailDashboard: UITableViewDelegate, UITableViewDataSource {
         cell.starredImage.tintColor = GmailColors().grayGmail
         cell.spamImage.tintColor = GmailColors().grayGmail
         
-        //cell.starredButton.addTarget(self, action: <#T##Selector#>, for: .touchUpInside)
-        //cell.starredButton.tag = indexPath.row
-        
         filterStarred = .starred(emailContent?.userEmail[indexPath.row].destacado ?? false)
         filterSpam = .spam(emailContent?.userEmail[indexPath.row].spam ?? false)
+        
+        cell.garbageButton.tag = indexPath.row
+        cell.garbageButton.addTarget(self, action: #selector(garbageButton(sender:)), for: .touchUpInside)
     
         
         if shouldCellBeExpanded && indexPath.row == indexOfExpandedCell {
@@ -207,5 +207,17 @@ extension GmailDashboard: UITableViewDelegate, UITableViewDataSource {
         emailTableView.beginUpdates()
         emailTableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
         emailTableView.endUpdates()
+    }
+    
+    @objc func garbageButton(sender: UIButton){
+            let index = sender.tag
+            
+            self.emailContent?.userEmail.remove(at: index)
+            print("Indexpath example: \([IndexPath(row: index, section: emailTableView.numberOfSections)].debugDescription)")
+            print("Tableview sections: \(emailTableView.numberOfSections)")
+        
+            self.emailTableView.reloadData()
+            self.emailTableView.deleteRows(at: [IndexPath(row: index, section: emailTableView.numberOfSections)], with: .fade)
+            self.emailTableView.reloadData()
     }
 }
