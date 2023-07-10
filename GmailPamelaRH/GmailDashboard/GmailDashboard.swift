@@ -12,11 +12,11 @@ struct GmailColors {
     var blueGmail: UIColor = UIColor(red: 83.0/255.0, green: 131.0/255.0, blue: 236.0/255.0, alpha: 1.0)
 }
 
-struct UserEmailData: Decodable {
+struct UserEmailData: Decodable, Encodable {
     var userEmail: [EmailContent]
 }
 
-struct EmailContent: Decodable {
+struct EmailContent: Decodable, Encodable {
     var emisor: String?
     var correoEmisor: String?
     var asunto: String?
@@ -73,6 +73,11 @@ public class GmailDashboard: UIViewController {
         rightSwipe.direction = .right
         
         self.view.addGestureRecognizer(rightSwipe)
+        
+        if let data = UserDefaults.standard.object(forKey: "emailDeleted") as? Data,
+           let category = try? JSONDecoder().decode(EmailContent.self, from: data) {
+            print("UserDefaults Email: \(category)")
+        }
     }
     
     private func initEmailTableView() {
@@ -209,15 +214,21 @@ extension GmailDashboard: UITableViewDelegate, UITableViewDataSource {
         emailTableView.endUpdates()
     }
     
-    @objc func garbageButton(sender: UIButton){
-            let index = sender.tag
-            
-            self.emailContent?.userEmail.remove(at: index)
-            print("Indexpath example: \([IndexPath(row: index, section: emailTableView.numberOfSections)].debugDescription)")
-            print("Tableview sections: \(emailTableView.numberOfSections)")
+    public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    @objc func garbageButton(sender: UIButton) {
+        let index = sender.tag
         
-            self.emailTableView.reloadData()
-            self.emailTableView.deleteRows(at: [IndexPath(row: index, section: emailTableView.numberOfSections)], with: .fade)
-            self.emailTableView.reloadData()
+        if let encoded = try? JSONEncoder().encode(emailContent?.userEmail[index]) {
+            UserDefaults.standard.set(encoded, forKey: "emailDeleted")
+        }
+        
+        self.emailContent?.userEmail.remove(at: index)
+        
+        let indexPath = IndexPath(row: index, section: 0)
+        self.emailTableView.deleteRows(at: [indexPath], with: .left)
+        self.emailTableView.reloadData()
     }
 }
