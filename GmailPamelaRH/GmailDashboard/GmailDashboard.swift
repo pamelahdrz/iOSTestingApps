@@ -12,40 +12,12 @@ struct GmailColors {
     var blueGmail: UIColor = UIColor(red: 83.0/255.0, green: 131.0/255.0, blue: 236.0/255.0, alpha: 1.0)
 }
 
-struct UserEmailData: Decodable, Encodable {
-    var userEmail: [EmailContent]
-}
-
-struct EmailContent: Decodable, Encodable {
-    var emisor: String?
-    var correoEmisor: String?
-    var asunto: String?
-    var mensaje: String?
-    var hora: String?
-    var leido: Bool?
-    var destacado: Bool?
-    var spam: Bool?
-    
-    init(_ emisor: String, _ correoEmisor: String, _ asunto: String, _ mensaje: String, _ hora: String, _ leido: Bool, _ destacado: Bool, _ spam: Bool) {
-        self.emisor = emisor
-        self.correoEmisor = correoEmisor
-        self.asunto = asunto
-        self.mensaje = mensaje
-        self.hora = hora
-        self.leido = leido
-        self.destacado = destacado
-        self.spam = spam
-    }
-}
-
 public enum FilterEmails {
     case inbox
     case starred(Bool)
     case spam(Bool)
     case trash
 }
-
-public typealias FetchSuccessful = (_ success : Bool, _ error : NSError?) -> ()
 
 public class GmailDashboard: UIViewController {
     
@@ -54,8 +26,6 @@ public class GmailDashboard: UIViewController {
     @IBOutlet weak var blurView: UIView!
     @IBOutlet weak var slideOutMenu: UIView!
     @IBOutlet weak var leadingConstraintMenu: NSLayoutConstraint!
-    
-    private var emailContent: UserEmailData?
     
     var filterStarred: FilterEmails?
     var filterSpam: FilterEmails?
@@ -73,47 +43,25 @@ public class GmailDashboard: UIViewController {
         rightSwipe.direction = .right
         
         self.view.addGestureRecognizer(rightSwipe)
-        
-        if let data = UserDefaults.standard.object(forKey: "emailDeleted") as? Data,
-           let category = try? JSONDecoder().decode(EmailContent.self, from: data) {
-            print("UserDefaults Email: \(category)")
-        }
     }
     
     private func initEmailTableView() {
-        self.fetchEmailContent { (success, error) in
+        GeneralRequestDispatcher.shared.fetchPOSTUserEmailContent { success, error in
             if success {
-                self.emailTableView.delegate = self
-                self.emailTableView.dataSource = self
-                self.emailTableView.isScrollEnabled = true
-                self.emailTableView.separatorColor = UIColor.clear
-                self.emailTableView.separatorStyle = .none
-                self.emailTableView.register(UINib(nibName: "EmailCell", bundle: nil), forCellReuseIdentifier: "EmailCell")
+                DispatchQueue.main.async {
+                    self.emailTableView.delegate = self
+                    self.emailTableView.dataSource = self
+                    self.emailTableView.isScrollEnabled = true
+                    self.emailTableView.separatorColor = UIColor.clear
+                    self.emailTableView.separatorStyle = .none
+                    self.emailTableView.register(UINib(nibName: "EmailCell", bundle: nil), forCellReuseIdentifier: "EmailCell")
+                }
             } else {
-                print("Tabla no Inicializada")
+                DispatchQueue.main.async {
+                    self.emptyInboxView.isHidden = false
+                    print("Tabla no Inicializada")
+                }
             }
-        }
-    }
-    
-    private func fetchEmailContent(completionHandler:@escaping FetchSuccessful) {
-        guard let pathJson = Bundle.main.path(forResource: "GmailUserInfo", ofType: "json") else {
-            return
-        }
-        
-        do {
-            let dataUrl = try Data(contentsOf: URL(fileURLWithPath: pathJson), options: .mappedIfSafe)
-            let decodeUserEmail = try JSONDecoder().decode(UserEmailData.self, from: dataUrl)
-            
-            emailContent = decodeUserEmail
-            
-            
-            completionHandler(true, nil)
-            
-        } catch {
-            print("JSON is not fetching itself")
-            emptyInboxView.isHidden = false
-            
-            completionHandler(false, error as NSError)
         }
     }
     
@@ -145,11 +93,11 @@ public class GmailDashboard: UIViewController {
 extension GmailDashboard: UITableViewDelegate, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var numberOfRows = 0
-        if emailContent?.userEmail.count == 0 {
+        if PopulateData.dataModel.emailContent?.count == 0 {
             numberOfRows = 0
             emptyInboxView.isHidden = false
         } else {
-            numberOfRows = emailContent?.userEmail.count ?? 0
+            numberOfRows = PopulateData.dataModel.emailContent?.count ?? 0
             emptyInboxView.isHidden = true
         }
         
@@ -166,19 +114,19 @@ extension GmailDashboard: UITableViewDelegate, UITableViewDataSource {
         cell.garbageImage.image =  cell.garbageImage.image?.withRenderingMode(.alwaysTemplate)
         cell.garbageImage.tintColor = UIColor.red
         cell.selectionStyle = .none
-        
-        cell.senderName.text = emailContent?.userEmail[indexPath.row].emisor
-        cell.emailSubject.text = emailContent?.userEmail[indexPath.row].asunto
-        cell.emailHeader.text = emailContent?.userEmail[indexPath.row].mensaje
-        cell.receivedTime.text = emailContent?.userEmail[indexPath.row].hora
+                
+        cell.senderName.text = PopulateData.dataModel.emailContent?[indexPath.row].emisor
+        cell.emailSubject.text = PopulateData.dataModel.emailContent?[indexPath.row].asunto
+        cell.emailHeader.text = PopulateData.dataModel.emailContent?[indexPath.row].mensaje
+        cell.receivedTime.text = PopulateData.dataModel.emailContent?[indexPath.row].hora
         
         cell.starredImage.image = cell.starredImage.image?.withRenderingMode(.alwaysTemplate)
         cell.spamImage.image = cell.spamImage.image?.withRenderingMode(.alwaysTemplate)
         cell.starredImage.tintColor = GmailColors().grayGmail
         cell.spamImage.tintColor = GmailColors().grayGmail
         
-        filterStarred = .starred(emailContent?.userEmail[indexPath.row].destacado ?? false)
-        filterSpam = .spam(emailContent?.userEmail[indexPath.row].spam ?? false)
+        filterStarred = .starred(PopulateData.dataModel.emailContent?[indexPath.row].destacado ?? false)
+        filterSpam = .spam(PopulateData.dataModel.emailContent?[indexPath.row].spam ?? false)
         
         cell.garbageButton.tag = indexPath.row
         cell.garbageButton.addTarget(self, action: #selector(garbageButton(sender:)), for: .touchUpInside)
@@ -220,12 +168,7 @@ extension GmailDashboard: UITableViewDelegate, UITableViewDataSource {
     
     @objc func garbageButton(sender: UIButton) {
         let index = sender.tag
-        
-        if let encoded = try? JSONEncoder().encode(emailContent?.userEmail[index]) {
-            UserDefaults.standard.set(encoded, forKey: "emailDeleted")
-        }
-        
-        self.emailContent?.userEmail.remove(at: index)
+        PopulateData.dataModel.emailContent?.remove(at: index)
         
         let indexPath = IndexPath(row: index, section: 0)
         self.emailTableView.deleteRows(at: [indexPath], with: .left)

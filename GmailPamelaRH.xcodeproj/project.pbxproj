@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66510BA92AC28B850018A336 /* GeneralRequestDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66510BA82AC28B850018A336 /* GeneralRequestDispatcher.swift */; };
+		66510BAB2AC36EB20018A336 /* PopulateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66510BAA2AC36EB20018A336 /* PopulateData.swift */; };
+		66510BAD2AC36F8E0018A336 /* UserEmailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66510BAC2AC36F8E0018A336 /* UserEmailData.swift */; };
 		B134B1422A590E4800DB8750 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B134B1412A590E4800DB8750 /* AppDelegate.swift */; };
 		B134B1442A590E4800DB8750 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B134B1432A590E4800DB8750 /* SceneDelegate.swift */; };
 		B134B14B2A590E4900DB8750 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B134B14A2A590E4900DB8750 /* Assets.xcassets */; };
@@ -42,6 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		66510BA82AC28B850018A336 /* GeneralRequestDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRequestDispatcher.swift; sourceTree = "<group>"; };
+		66510BAA2AC36EB20018A336 /* PopulateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulateData.swift; sourceTree = "<group>"; };
+		66510BAC2AC36F8E0018A336 /* UserEmailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEmailData.swift; sourceTree = "<group>"; };
 		B134B13E2A590E4800DB8750 /* GmailPamelaRH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GmailPamelaRH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B134B1412A590E4800DB8750 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B134B1432A590E4800DB8750 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,9 +94,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		66510BA72AC28B3E0018A336 /* GeneralRequestDispatcher */ = {
+			isa = PBXGroup;
+			children = (
+				66510BA82AC28B850018A336 /* GeneralRequestDispatcher.swift */,
+				66510BAA2AC36EB20018A336 /* PopulateData.swift */,
+				66510BAC2AC36F8E0018A336 /* UserEmailData.swift */,
+			);
+			path = GeneralRequestDispatcher;
+			sourceTree = "<group>";
+		};
 		B134B1352A590E4800DB8750 = {
 			isa = PBXGroup;
 			children = (
+				66510BA72AC28B3E0018A336 /* GeneralRequestDispatcher */,
 				B134B1402A590E4800DB8750 /* GmailPamelaRH */,
 				B134B1572A590E4900DB8750 /* GmailPamelaRHTests */,
 				B134B1612A590E4900DB8750 /* GmailPamelaRHUITests */,
@@ -324,7 +341,10 @@
 				B134B1442A590E4800DB8750 /* SceneDelegate.swift in Sources */,
 				B134B17B2A591E1F00DB8750 /* GmailDashboard.swift in Sources */,
 				B1905C142A596BD600B2C280 /* EmailCell.swift in Sources */,
+				66510BAB2AC36EB20018A336 /* PopulateData.swift in Sources */,
 				B134B1772A591DE600DB8750 /* Login.swift in Sources */,
+				66510BA92AC28B850018A336 /* GeneralRequestDispatcher.swift in Sources */,
+				66510BAD2AC36F8E0018A336 /* UserEmailData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
